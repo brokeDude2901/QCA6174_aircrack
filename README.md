@@ -10,9 +10,9 @@ STEPS:
 
 3- Change downloaded file name, permissions(chmod), owner(chown) and group(chgrp) to match the original firmware-6.bin
 
-4- Run this (replace wlp2s0 with your interface name):
+4- Run this (replace wlp4s0 with your interface name):
 ```bash
-sudo airmon-ng stop wlp2s0 && sudo airmon-ng check kill && sudo modprobe -r ath10k_pci && sudo modprobe -r ath10k_core
+sudo airmon-ng stop wlp4s0 && sudo airmon-ng check kill && sudo modprobe -r ath10k_pci && sudo modprobe -r ath10k_core
 ```
 
 5- Replace /lib/firmware/ath10k/QCA6174/hw3.0/firmware-6.bin with the downloaded file
@@ -34,7 +34,7 @@ sudo modprobe -r ath10k_core
 sudo modprobe ath10k_core rawmode=1 cryptmode=1
 sudo modprobe ath10k_pci
 sudo airmon-ng check kill
-sudo airmon-ng start wlp2s0
+sudo airmon-ng start wlp4s0
 ```
 
 DISABLE:
@@ -43,7 +43,7 @@ sudo modprobe -r ath10k_pci
 sudo modprobe -r ath10k_core
 sudo modprobe ath10k_core rawmode=0 cryptmode=0
 sudo modprobe ath10k_pci
-sudo airmon-ng stop wlp2s0
+sudo airmon-ng stop wlp4s0
 sudo service network-manager start
 ```
 9- Proceed
